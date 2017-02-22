@@ -53,3 +53,6 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'will_paginate', '~> 3.1'
 
 gem 'simple_form'
+
+# Gemfile for font awesome icons
+gem "font-awesome-rails"
