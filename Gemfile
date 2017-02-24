@@ -51,8 +51,11 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1'
+gem 'will_paginate-bootstrap4'
 
 gem 'simple_form'
 
 # Gemfile for font awesome icons
 gem "font-awesome-rails"
+# Gem for user authentication
+gem 'devise'

@@ -9,9 +9,10 @@
 
 <% end %>
 
-
-<div class="flickr_pagination">
-    <%= will_paginate @places, :container => false %>
+<!-- class="flickr_pagination"  page_info-->
+<div>
+ <!--  <%= will_paginate @places, :container => false %>-->
+    <%= will_paginate @places, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     <div class="page_info">
       <%= page_entries_info @places %>
     </div>
