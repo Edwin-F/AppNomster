@@ -59,3 +59,7 @@ gem 'simple_form'
 gem "font-awesome-rails"
 # Gem for user authentication
 gem 'devise'
+# Gem for convert address to latitude and longitude
+gem 'geocoder'
+# Gem for storing sensitive information
+gem 'figaro'
