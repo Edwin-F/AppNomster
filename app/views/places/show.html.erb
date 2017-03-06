@@ -4,6 +4,11 @@
   <br /><br />
   <p><%= @place.description %></p>
 
+  <div>
+    <% @place.photos.each do |photo| %>
+      <%= photo.caption %>
+    <% end %>
+  </div>
 
   <style>
     html, body {
@@ -17,33 +22,33 @@
   </style>
  
 
-<% if @place.latitude.present? && @place.longitude.present? %> 
-  <script>
+  <% if @place.latitude.present? && @place.longitude.present? %> 
+    <script>
 
-    function initMap() {
-      var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+      function initMap() {
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: myLatLng
-      });
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
 
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-      });
-    }
-  </script>
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
 
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDsh8BWwYkhNZX_Jbe_XrXOIHUintsGmg&callback=initMap">
-  </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDsh8BWwYkhNZX_Jbe_XrXOIHUintsGmg&callback=initMap">
+    </script>
 
-  <div id="map"></div>
-<% end %>
+    <div id="map"></div>
+  <% end %>
 
-<br />
+  <br />
 
   <div class="float-right">
     <% if current_user && current_user == @place.user %>
@@ -105,3 +110,9 @@
   </div>
 <% end %>
 </div>
+
+<div class="clear"></div>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :caption %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
