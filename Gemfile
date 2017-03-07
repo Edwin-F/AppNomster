@@ -65,3 +65,5 @@ gem 'geocoder'
 gem 'figaro'
 # Gem for uploading files
 gem 'carrierwave', '~> 1.0'
+# Gem for carrierWave to communicate with Amazon S3
+gem 'fog'
