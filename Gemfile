@@ -63,3 +63,5 @@ gem 'devise'
 gem 'geocoder'
 # Gem for storing sensitive information
 gem 'figaro'
+# Gem for uploading files
+gem 'carrierwave', '~> 1.0'
