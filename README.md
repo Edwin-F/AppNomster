@@ -1,24 +1,37 @@
-# README
+= Nomster
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Yelp clone with a mobile-fist design, listing restaurants in Chicago.
 
-Things you may want to cover:
+View the {Live Site}[https://nomster-edwin-f.herokuapp.com/].
 
-* Ruby version
 
-* System dependencies
+Features:
 
-* Configuration
+Built with Ruby on Rails and Bootstrap
+Integrates with the Google Map API, and Bing API 
+Includes user comments, star ratings, image uploading, and user authentication
 
-* Database creation
+= Install
+      
+=== System Requirements
+- Ruby `2.3.1` recommended
+- Rails 5.0.1
+- Postgres 9.2+
+ 
+=== Fork and bundle
+- Fork the project
+- Run bundle to install gems
 
-* Database initialization
+  <tt> bundle install </tt>   
+        
+=== Database setup
 
-* How to run the test suite
+Download and Install Postgres[https://www.postgresql.org/download/]
 
-* Services (job queues, cache servers, search engines, etc.)
+- Create the databases:
 
-* Deployment instructions
+  <tt> rails db:create </tt>
+        
+- Run migrations to create tables:
 
-* ...
+  <tt> rails db:migrate </tt>
